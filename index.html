@@ -10,8 +10,8 @@
 <body>
     <main class="container">
         <h1 class="title">To Do List</h1>
-        <form id="form-add">
-            <input type="text" placeholder="Agregar nuevo to do">
+        <form id="form-add" class="form-add">
+            <input type="text" placeholder="Agregar nuevo to do" class="form-add__input">
             <div class="icon-add">
                 <img src="assets/add.svg" alt="icono de Agregar" title="Agregar nuevo to do">
             </div>
@@ -19,10 +19,10 @@
         <div class="tareas">
             <div class="tareas__item">
                 <div class="icon-checked">
-                    <img src="assets/checkbox-checked.svg" alt="icono de checked" title="Marcar to do como completado">
+                    <input type="checkbox" class="checkbox" id="btnComplete" title="Marcar To Do como completado">
                 </div>
                 <div class="tareas__text">
-                    <span class="text"></span>
+                    <span class="text">Preparar la comida</span>
                 </div>
                 <div class="icon-delete">
                     <img src="assets/delete.svg" alt="icono de eliminar" title="eliminar to do">
