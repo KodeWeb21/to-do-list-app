@@ -27,7 +27,11 @@ const addTodo = (text,) =>{
 
 const pintarAllTodo = () =>{
     todos.forEach(todo=>{
-        
+        const todoChecked = todo.checked;
+        if(todoChecked){
+            template.querySelector('.checkbox').setAttribute("checked",true);
+            template.querySelector('.tareas__text').classList.add("line-throught");
+        };
         template.querySelector(".tareas__item").setAttribute("data-id",todo.id);
         template.querySelector(".text").textContent = todo.text;
         const cloneTemplate = document.importNode(template,true);
@@ -71,7 +75,6 @@ tareas.addEventListener('click',(event)=>{
     const todo = event.target.parentElement.parentElement;
     const id = todo.getAttribute("data-id");
     if(event.target.id == "delete"){
-        console.log(todo);
         deleteTodo(id);
         todo.remove();
     }
