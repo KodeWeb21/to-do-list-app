@@ -57,17 +57,12 @@ form.addEventListener("submit",(event)=>{
     event.preventDefault();
 })
 
-const btnDelete = Array.from(document.querySelectorAll('.icon-delete'));
-
-btnDelete.forEach(deletebtn =>{
-    deletebtn.addEventListener('click',()=>{
-        const todo = deletebtn.parentElement;
+tareas.addEventListener('click',(event)=>{
+    if(event.target.id == "delete"){
+        const todo = event.target.parentElement.parentElement;
+        console.log(todo);
         const id = todo.getAttribute("data-id");
         deleteTodo(id);
         todo.remove();
-    })
-})
-
-tareas.addEventListener('click',(event)=>{
-    console.log(event.target);
+    }
 })
