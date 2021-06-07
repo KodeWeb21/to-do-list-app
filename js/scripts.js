@@ -29,9 +29,12 @@ const pintarAllTodo = () =>{
     todos.forEach(todo=>{
         const todoChecked = todo.checked;
         if(todoChecked){
-            template.querySelector('.checkbox').setAttribute("checked",true);
+            template.querySelector('.checkbox').setAttribute("checked",true)
             template.querySelector('.tareas__text').classList.add("line-throught");
-        };
+        }else{
+            template.querySelector('.checkbox').removeAttribute("checked");
+            template.querySelector('.tareas__text').classList.remove("line-throught");
+        }
         template.querySelector(".tareas__item").setAttribute("data-id",todo.id);
         template.querySelector(".text").textContent = todo.text;
         const cloneTemplate = document.importNode(template,true);
