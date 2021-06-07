@@ -65,4 +65,17 @@ tareas.addEventListener('click',(event)=>{
         deleteTodo(id);
         todo.remove();
     }
+
+    if(event.target.id == "Complete"){
+        const checkedElement = event.target;
+        const checked = checkedElement.getAttribute("checked")
+        const containerText = checkedElement.parentElement.parentElement.children[1]
+        if(checked){
+            checkedElement.removeAttribute("checked");
+            containerText.classList.remove('line-throught');
+        }else{
+            checkedElement.setAttribute("checked",true);
+            containerText.classList.add('line-throught');
+        }
+    }
 })
