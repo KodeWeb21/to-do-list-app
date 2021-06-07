@@ -17,18 +17,21 @@
             </div>
         </form>
         <div class="tareas">
-            <div class="tareas__item">
-                <div class="icon-checked">
-                    <input type="checkbox" class="checkbox" id="btnComplete" title="Marcar To Do como completado">
+            <template id="template-tarea">
+                <div class="tareas__item">
+                    <div class="icon-checked">
+                        <input type="checkbox" class="checkbox" id="btnComplete" title="Marcar To Do como completado">
+                    </div>
+                    <div class="tareas__text">
+                        <span class="text"></span>
+                    </div>
+                    <div class="icon-delete">
+                        <img src="assets/delete.svg" alt="icono de eliminar" title="eliminar to do" id="delete">
+                    </div>
                 </div>
-                <div class="tareas__text">
-                    <span class="text">Preparar la comida</span>
-                </div>
-                <div class="icon-delete">
-                    <img src="assets/delete.svg" alt="icono de eliminar" title="eliminar to do">
-                </div>
-            </div>
+            </template>
         </div>
     </main>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
