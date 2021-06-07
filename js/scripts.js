@@ -43,6 +43,16 @@ const pintarTodo = (text,id) =>{
     tareas.append(cloneTemplate);
 }
 
+const cambiarAchecked = (id,estado) =>{
+    for(const todo of todos){
+        if(todo.id == id) {
+            if(estado) todo.checked = true
+            else todo.checked = false;
+        };
+    }
+    localStorage.setItem("list",JSON.stringify(todos));
+}
+
 if(todos.length > 0){
     pintarAllTodo();
 }
@@ -58,10 +68,10 @@ form.addEventListener("submit",(event)=>{
 })
 
 tareas.addEventListener('click',(event)=>{
+    const todo = event.target.parentElement.parentElement;
+    const id = todo.getAttribute("data-id");
     if(event.target.id == "delete"){
-        const todo = event.target.parentElement.parentElement;
         console.log(todo);
-        const id = todo.getAttribute("data-id");
         deleteTodo(id);
         todo.remove();
     }
@@ -73,9 +83,11 @@ tareas.addEventListener('click',(event)=>{
         if(checked){
             checkedElement.removeAttribute("checked");
             containerText.classList.remove('line-throught');
+            cambiarAchecked(id,false);
         }else{
             checkedElement.setAttribute("checked",true);
             containerText.classList.add('line-throught');
+            cambiarAchecked(id,true)
         }
     }
 })
