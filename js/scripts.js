@@ -8,7 +8,8 @@ const tareas = document.querySelector('.tareas');
 
 const deleteTodo = (id) =>{
     for(const todo of todos){
-        if(todo.id == id) todos.splice(todos[todo],1)
+        const index = todos.indexOf(todo);
+        if(todo.id == id) todos.splice(index,1)
     }
     localStorage.setItem("list",JSON.stringify(todos))
 }
