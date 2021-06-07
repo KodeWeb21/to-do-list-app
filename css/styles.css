@@ -31,6 +31,7 @@ body,.form-add__input{
     box-shadow: 0 0 5px var(--shadow);
     padding: 1rem;
     overflow:hidden;
+    min-height:300px;
 }
 
 /* ICONOS */
@@ -41,6 +42,10 @@ body,.form-add__input{
 
 .checkbox{
   height:var(--icon-md-width);
+}
+
+.icon-checked > img, .icon-delete > img{
+    display:block;
 }
 
 /* TO DO*/
@@ -80,4 +85,10 @@ body,.form-add__input{
    border: 1px solid var(--shadow);
    border-radius: 5px;
    padding: .4rem;
+}
+
+/* CAMBIOS DE ESTADO */
+
+.line-throught{
+    text-decoration: line-through;
 }
