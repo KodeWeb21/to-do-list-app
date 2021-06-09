@@ -45,6 +45,8 @@ const pintarAllTodo = () =>{
 }
 
 const pintarTodo = (text,id) =>{
+    template.querySelector('.checkbox').removeAttribute("checked");
+    template.querySelector('.tareas__text').classList.remove("line-throught");
     template.querySelector(".tareas__item").setAttribute("data-id",id)
     template.querySelector(".text").textContent = text;
     const cloneTemplate =  document.importNode(template,true);
