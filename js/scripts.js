@@ -1,4 +1,3 @@
-const btnAdd = document.querySelector('.icon-add');
 const input = document.querySelector('.form-add__input');
 const form = document.getElementById('form-add');
 const todos = (localStorage.getItem('list') !== null)?  JSON.parse(localStorage.getItem("list")) : [];
@@ -67,14 +66,12 @@ if(todos.length > 0){
     pintarAllTodo();
 }
 
-btnAdd.addEventListener("click",()=>{
-    const textTodo = input.value;
-    if(textTodo !== "")addTodo(textTodo);
-    form.reset();
-})
 
 form.addEventListener("submit",(event)=>{
     event.preventDefault();
+    const textTodo = input.value;
+    if(textTodo !== "")addTodo(textTodo);
+    form.reset();
 })
 
 tareas.addEventListener('click',(event)=>{
