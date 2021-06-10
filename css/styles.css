@@ -33,7 +33,7 @@ body,.form-add__input{
     box-shadow: 0 0 5px var(--shadow);
     padding: 1rem;
     overflow:hidden;
-    min-height:300px;
+    min-height:100vh;
 }
 
 /* botones */
