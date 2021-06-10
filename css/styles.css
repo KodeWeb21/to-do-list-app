@@ -36,10 +36,18 @@ body,.form-add__input{
     min-height:300px;
 }
 
-/* ICONOS */
+/* botones */
 .icon-checked,.icon-delete,.icon-add,.checkbox{
     width: var(--icon-md-width);
     cursor: pointer;
+}
+
+.icon-add,.icon-delete{
+    border:0;
+    display:block;
+    text-align:center;
+    padding:0;
+    background-color:inherit;
 }
 
 .checkbox{
